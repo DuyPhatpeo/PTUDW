@@ -77,3 +77,10 @@ D:\Code\PTUDW\ThucHanh\obj\Debug\ThucHanh.csproj.CoreCompileInputs.cache
 D:\Code\PTUDW\ThucHanh\obj\Debug\ThucHanh.csproj.CopyComplete
 D:\Code\PTUDW\ThucHanh\obj\Debug\ThucHanh.dll
 D:\Code\PTUDW\ThucHanh\obj\Debug\ThucHanh.pdb
+D:\Code\PTUDW\ThucHanh\bin\EntityFramework.dll
+D:\Code\PTUDW\ThucHanh\bin\EntityFramework.SqlServer.dll
+D:\Code\PTUDW\ThucHanh\bin\EntityFramework.xml
+D:\Code\PTUDW\ThucHanh\bin\EntityFramework.SqlServer.xml
+D:\Code\PTUDW\ThucHanh\bin\MyClass.dll
+D:\Code\PTUDW\ThucHanh\bin\MyClass.pdb
+D:\Code\PTUDW\ThucHanh\bin\MyClass.dll.config
