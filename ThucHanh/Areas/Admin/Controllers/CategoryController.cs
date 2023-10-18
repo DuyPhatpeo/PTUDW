@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyClass.Model;
 using MyClass.DAO;
+using ThucHanh.Library;
 
 namespace ThucHanh.Areas.Admin.Controllers
 {
@@ -61,7 +62,30 @@ namespace ThucHanh.Areas.Admin.Controllers
                 categories.CreateAt = DateTime.Now;
                 //--CreateBy
                 categories.CreateBy = Convert.ToInt32(Session["UserID"]);
+                //slug
+                categories.Slug = XString.Str_Slug(categories.Name);
+                //ParentID
+                if(categories.ParentID == null)
+                {
+                    categories.ParentID = 0;
+                }
+                //Order
+                if(categories.Order == null)
+                {
+                    categories.Order = 1;
+                }
+                else
+                {
+                    categories.Order += 1;
+                }
+                //UpdateAt
+                categories.UpdateAt = DateTime.Now;
+                //UpdateBy
+                categories.UpdateBy = Convert.ToInt32(Session["UserID"]);
+
                 categoriesDAO.Insert(categories);
+                //hien thi thong bao thanh cong
+                TempData["message"] = new XMessage("success","Tạo mới loại sản phẩm thành công");
                 return RedirectToAction("Index");
             }
             ViewBag.CatList = new SelectList(categoriesDAO.getList("Index"), "Id", "Name");
@@ -128,6 +152,35 @@ namespace ThucHanh.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-
+        // GET: Admin/Category/Status/5
+        public ActionResult Status(int? id)
+        {
+            if (id == null)
+            {
+                //hien thi thong bao
+                TempData["message"] = new XMessage("danger", "Cập nhật trạng thái thất bại");
+                return RedirectToAction("Index");
+            }
+            Categories categories = categoriesDAO.getRow(id);
+            if (categories == null)
+            {
+                //hien thi thong bao
+                TempData["message"] = new XMessage("danger", "Cập nhật trạng thái thất bại");
+                return RedirectToAction("Index");
+            }
+            
+            //cap nhat trang thai
+            categories.Status = (categories.Status == 1) ? 2 : 1;
+            //cap nhat UpdateAt
+            categories.UpdateAt = DateTime.Now;
+            //cap nhat UpdateBy
+            categories.UpdateBy = Convert.ToInt32(Session["UserID"]);
+            //Update Db
+            categoriesDAO.Update(categories);
+            //hien thi thong bao
+            TempData["message"] = new XMessage("success", "Cập nhật trạng thái thành công");
+            //tro ve trang inddex
+            return RedirectToAction("Index");
+        }
     }
 }
