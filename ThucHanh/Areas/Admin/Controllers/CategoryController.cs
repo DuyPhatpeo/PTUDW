@@ -120,6 +120,7 @@ namespace ThucHanh.Areas.Admin.Controllers
                 categoriesDAO.Update(categories);
                 return RedirectToAction("Index");
             }
+
             return View(categories);
         }
 
