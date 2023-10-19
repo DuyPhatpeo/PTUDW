@@ -1,7 +1,7 @@
 ﻿@model MyClass.Model.Categories
 
 @{
-    ViewBag.Title = "Chi tiết thông tin mặt hàng";
+    ViewBag.Title = "Chi tiết loại sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -20,13 +20,11 @@
                             <strong class="text-danger">DANH MỤC LOẠI HÀNG</strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a href="@Url.Action("Edit","Category",new { id = Model.ID })" class="btn-sm btn-success"><i class="fa fa-edit">Sửa</i></a>
-                            <a href="@Url.Action("Index","Category")" class="btn-sm btn-info"><i class="fa fa-long-arrow-alt-left"> Quay lại</i></a>
-
+                            <a href="@Url.Action("Edit","Category",new { id = Model.ID })" class="btn-sm btn-primary"><i class="fa fa-edit"> Sửa</i></a>
+                            <a href="@Url.Action("Index","Category")" class="btn-sm btn-success"><i class="fa fa-arrow-left"> Quay lại</i></a>
                         </div>
                     </div>
                 </div>
-                
                 <div class="card-body">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -38,22 +36,22 @@
                                 <th>@Html.DisplayNameFor(model => model.Order)</th>
                                 <th>@Html.DisplayNameFor(model => model.CreateAt)</th>
                                 <th>@Html.DisplayNameFor(model => model.UpdateAt)</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>@Html.DisplayFor(modelItem => Model.ID)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.Name)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.Slug)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.ParentID)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.Order)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.CreateAt)</td>
-                                <td>@Html.DisplayFor(modelItem => Model.UpdateAt)</td>
+                                <td>@Html.DisplayFor(model => model.ID)</td>
+                                <td>@Html.DisplayFor(model => model.Name)</td>
+                                <td>@Html.DisplayFor(model => model.Slug)</td>
+                                <td>@Html.DisplayFor(model => model.Name)</td>
+                                <td>@Html.DisplayFor(model => model.Order)</td>
+                                <td>@Html.DisplayFor(model => model.CreateAt)</td>
+                                <td>@Html.DisplayFor(model => model.UpdateAt)</td>
                             </tr>
-                        
                         </tbody>
-                    </table>
 
+                    </table>
 
                 </div> <!-- /.card-footer-->
             </div><!-- /.card -->
@@ -61,3 +59,8 @@
     </div> <!-- /.content-wrapper -->
 </div><!-- ./wrapper -->
 
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

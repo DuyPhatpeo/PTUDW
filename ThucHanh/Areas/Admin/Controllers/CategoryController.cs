@@ -25,19 +25,7 @@ namespace ThucHanh.Areas.Admin.Controllers
         }
 
 
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Categories categories = categoriesDAO.getRow(id);
-            if (categories == null)
-            {
-                return HttpNotFound();
-            }
-            return View(categories);
-        }
+        
         
 
 
@@ -105,9 +93,19 @@ namespace ThucHanh.Areas.Admin.Controllers
 
         // GET: Admin/Category/Details/5
 
-
-
-
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Categories categories = categoriesDAO.getRow(id);
+            if (categories == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categories);
+        }
 
         // GET: Admin/Category/Create
 
