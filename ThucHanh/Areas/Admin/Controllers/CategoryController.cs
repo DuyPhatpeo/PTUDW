@@ -107,6 +107,7 @@ namespace ThucHanh.Areas.Admin.Controllers
             return View(categories);
         }
 
+
         // GET: Admin/Category/Create
 
         public ActionResult Create()
