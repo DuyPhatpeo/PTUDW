@@ -28,9 +28,7 @@
                     </div>
                     <div class="card-body">
                         <div class="form-horizontal">
-
                             <div class="row">
-
                                 @* Phần nhập dữ liệu bằng tay*@
                                 <div class="col-md-9">
                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -57,7 +55,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 @*Phần lựa chọn dữ liệu*@
                                 <div class="col-md-3">
                                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -85,14 +82,11 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                        
                             <div class="card-body">
                                 @Html.AntiForgeryToken()
                                 <button class="btn-sm btn-success" type="submit" name="create">Lưu/Thêm<i class="fa fa-save"></i></button>
                             </div>
-
                         </div>
                     </div> <!-- /.card-footer-->
                 </div><!-- /.card -->
