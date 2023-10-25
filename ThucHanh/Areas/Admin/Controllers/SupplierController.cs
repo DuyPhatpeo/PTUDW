@@ -181,19 +181,20 @@ namespace ThucHanh.Areas.Admin.Controllers
         }
 
         // GET: Admin/Supplier/Delete/5
+        //Xóa hoàn toàn
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                //hien thi thong bao
-                TempData["message"] = new XMessage("danger", "Xóa mẫu tin thất bại");
+                //hiện thị thông báo
+                TempData["message"] = new XMessage("danger", "Xóa mẫu tin thất bại!");
                 return RedirectToAction("Trash");
             }
             Suppliers suppliers = suppliersDAO.getRow(id);
             if (suppliers == null)
             {
-                //hien thi thong bao
-                TempData["message"] = new XMessage("danger", "Xóa mẫu tin thất bại");
+                //hiện thị thông báo
+                TempData["message"] = new XMessage("danger", "Xóa mẫu tin thất bại!");
                 return RedirectToAction("Trash");
             }
             return View(suppliers);
@@ -205,14 +206,23 @@ namespace ThucHanh.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Suppliers suppliers = suppliersDAO.getRow(id);
-            suppliersDAO.Delete(suppliers);
-            //tìm thấy mẫu tin thì tiến hành xóa
-            //hien thi thong bao
-            TempData["message"] = new XMessage("success", "Xóa mẫu tin thành công");
+            if (suppliersDAO.Delete(suppliers) == 1)
+            {
+                //duong dan den anh can xoa
+                string PathDir = "~/Public/img/supplier/";
+                //cap nhat thi phai xoa file cu
+                if (suppliers.Image != null)
+                {
+                    string DelPath = Path.Combine(Server.MapPath(PathDir), suppliers.Image);
+                    System.IO.File.Delete(DelPath);
+                }
+            }
+            //Thong bao thanh cong
+            TempData["message"] = new XMessage("success", "Xóa danh mục thành công");
             return RedirectToAction("Trash");
         }
-        //// GET: Admin/Supplier/Status/5
-        public ActionResult Status(int? id)
+            //// GET: Admin/Supplier/Status/5
+            public ActionResult Status(int? id)
         {
             if (id == null)
             {
