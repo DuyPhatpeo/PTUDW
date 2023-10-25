@@ -35,7 +35,7 @@ namespace MyClass.DAO
                 case "Trash":
                     {
                         list = db.Categories
-                            .Where(m => m.Status != 0)
+                            .Where(m => m.Status == 0)
                             .ToList();
                         break;
                     }
