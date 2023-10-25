@@ -30,7 +30,7 @@
                             <strong class="text-danger">THÙNG RÁC DANH SÁCH LOẠI HÀNG</strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a href=" @Url.Action("Index", "Category")" class="btn-sm btn-info"><i class="fa fa-long-arrow-alt-left"> Quay lại </i></a>
+                            <a href=" @Url.Action("Index", "Supplier")" class="btn-sm btn-info"><i class="fa fa-long-arrow-alt-left"> Quay lại </i></a>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
                                     <td><img src="~/Public/img/supplier/@item.Image" alt="Img" style="max-width: 100px;" /></td>
                                     <td>
-                                        <a href=" @Url.Action("Undo","Category", new { id = item.ID })" class="btn-sm btn-success"><i class="fa fa-undo"></i></a>
-                                        <a href=" @Url.Action("Delete", "Category", new { id = item.ID })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a href=" @Url.Action("Undo","Supplier", new { id = item.ID })" class="btn-sm btn-success"><i class="fa fa-undo"></i></a>
+                                        <a href=" @Url.Action("Delete", "Supplier", new { id = item.ID })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             }
