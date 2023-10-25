@@ -10,7 +10,7 @@ using MyClass.Model;
 using MyClass.DAO;
 using ThucHanh.Library;
 
-namespace LTWProject.Areas.Admin.Controllers
+namespace ThucHanh.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
