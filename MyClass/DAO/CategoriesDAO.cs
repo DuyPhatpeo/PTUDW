@@ -78,7 +78,6 @@ namespace MyClass.DAO
         //DELETE
         public int Delete(Categories row)
         {
-
             db.Categories.Remove(row);
             return db.SaveChanges();
         }
