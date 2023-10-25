@@ -39,7 +39,6 @@ namespace MyClass.Model
         public int? UpdateBy { get; set; }
         [Display(Name = "Ngày cập nhật")]
         public DateTime? UpdateAt { get; set; }
-        [Required(ErrorMessage = "Trạng thái không được để trống")]
         [Display(Name = "Trạng thái")]
         public int Status { get; set; }
 
