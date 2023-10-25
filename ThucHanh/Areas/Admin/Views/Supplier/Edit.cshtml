@@ -5,9 +5,12 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm("Create", "Supplier", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "Supplier", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ID);
+    @Html.HiddenFor(model => model.CreateAt);
+    @Html.HiddenFor(model => model.CreateBy);
     <div class="wrapper">
         <!-- Main Sidebar Container -->
         <!-- Content Wrapper. Contains page content -->
@@ -65,7 +68,7 @@
                                 <div class="form-group">
                                     <label>Logo NCC <span class="text-danger"></span></label>
                                     <div class="col-md-10">
-                                        <input type="file" name="img" class="form-control" alt="Hình ảnh" />
+                                        <input name="img" type="file" class="form-control" />
                                     </div>
                                 </div>
                             </div>
