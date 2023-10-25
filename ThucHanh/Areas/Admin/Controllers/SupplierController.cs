@@ -103,44 +103,40 @@ namespace ThucHanh.Areas.Admin.Controllers
         // GET: Admin/Supplier/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.OrderList = new SelectList(suppliersDAO.getList("Index"), "Order", "Name");
             if (id == null)
             {
-                TempData["message"] = new XMessage("danger", "Không tìm thấy loại hàng");
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Suppliers suppliers = suppliersDAO.getRow(id);
             if (suppliers == null)
             {
-                TempData["message"] = new XMessage("danger", "Không tìm thấy nhà cung cấp");
-                return RedirectToAction("Index");
+                return HttpNotFound();
             }
-            ViewBag.OrderList = new SelectList(suppliersDAO.getList("Index"), "Order", "Name");
             return View(suppliers);
         }
 
-
+        // POST: Admin/Supplier/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Image,Slug,Order,FullName,Phone,Email,MetaDesc,MetaKey,CreateBy,CreateAt,UpdateBy,UpdateAt,Status")] Suppliers suppliers)
+        public ActionResult Edit(Suppliers suppliers)
         {
             if (ModelState.IsValid)
             {
-                //xu ly tu dong 1 so truong
-                //slug
+                //Xu ly cho muc Slug
                 suppliers.Slug = XString.Str_Slug(suppliers.Name);
-                //order
+                //chuyen doi dua vao truong Name de loai bo dau, khoang cach = dau -
+
+                //Xu ly cho muc Order
                 if (suppliers.Order == null)
                 {
                     suppliers.Order = 1;
                 }
                 else
                 {
-                    suppliers.Order += 1;
+                    suppliers.Order = suppliers.Order + 1;
                 }
-                //UpdateAt
-                suppliers.UpdateAt = DateTime.Now;
-                //UpdateBy 
-                suppliers.UpdateBy = Convert.ToInt32(Session["UserID"]);
+
                 //xu ly cho phan upload hình ảnh
                 var img = Request.Files["img"];//lay thong tin file
                 if (img.ContentLength != 0)
@@ -156,11 +152,29 @@ namespace ThucHanh.Areas.Admin.Controllers
                         //upload hinh
                         string PathDir = "~/Public/img/supplier/";
                         string PathFile = Path.Combine(Server.MapPath(PathDir), imgName);
+
+                        //cap nhat thi phai xoa file cu
+                        //Xoa file
+                        if (suppliers.Image != null)
+                        {
+                            string DelPath = Path.Combine(Server.MapPath(PathDir), suppliers.Image);
+                            System.IO.File.Delete(DelPath);
+                        }
+
                         img.SaveAs(PathFile);
                     }
                 }//ket thuc phan upload hinh anh
-                suppliersDAO.Insert(suppliers);
-                TempData["message"] = new XMessage("success", "Thêm mới nhà cung cấp thành công");
+
+                //Xu ly cho muc UpdateAt
+                suppliers.UpdateAt = DateTime.Now;
+
+                //Xu ly cho muc UpdateBy
+                suppliers.UpdateBy = Convert.ToInt32(Session["UserId"]);
+
+                suppliersDAO.Update(suppliers);
+
+                //Thong bao thanh cong
+                TempData["message"] = new XMessage("success", "Sửa danh mục thành công");
                 return RedirectToAction("Index");
             }
             return View(suppliers);
@@ -267,7 +281,7 @@ namespace ThucHanh.Areas.Admin.Controllers
             if (id == null)
             {
                 //hien thi thong bao
-                TempData["message"] = new XMessage("danger", "Phục hồi mẫu tin thất baik");
+                TempData["message"] = new XMessage("danger", "Phục hồi mẫu tin thất bại");
                 return RedirectToAction("Index");
             }
             Suppliers suppliers = suppliersDAO.getRow(id);
