@@ -26,8 +26,8 @@ namespace ThucHanh.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NFPKT4K\\SQLEXPRESS;Initial Catalog=master;Integrated Security" +
-            "=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NFPKT4K\\SQLEXPRESS;Initial Catalog=Web;Integrated Security=Tr" +
+            "ue")]
         public string StrConnect {
             get {
                 return ((string)(this["StrConnect"]));
