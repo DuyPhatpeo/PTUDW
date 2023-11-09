@@ -37,6 +37,7 @@
                                 <th>@Html.DisplayNameFor(model => model.Phone)</th>
                                 <th>@Html.DisplayNameFor(model => model.Email)</th>
                                 <th>@Html.DisplayNameFor(model => model.Image)</th>
+                                <th>@Html.DisplayNameFor(model => model.Status)</th>
                                 <th>@Html.DisplayNameFor(model => model.CreateAt)</th>
                                 <th>@Html.DisplayNameFor(model => model.UpdateAt)</th>
 
@@ -52,6 +53,7 @@
                                 <td>@Html.DisplayFor(model => model.Phone)</td>
                                 <td>@Html.DisplayFor(model => model.Email)</td>
                                 <td><img src="~/Public/img/supplier/@Model.Image" alt="Img" style="max-width: 100px;" /></td>
+                                <td>@Html.DisplayFor(model => model.Status)</td>
                                 <td>@Html.DisplayFor(model => model.CreateAt)</td>
                                 <td>@Html.DisplayFor(model => model.UpdateAt)</td>
                             </tr>
