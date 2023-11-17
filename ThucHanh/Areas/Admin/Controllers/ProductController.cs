@@ -44,7 +44,7 @@ namespace ThucHanh.Areas.Admin.Controllers
         // GET: Admin/Product/Create
         public ActionResult Create()
         {
-            ViewBag.ListCartID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
+            ViewBag.ListCatID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
             ViewBag.ListSupID = new SelectList(suppliersDAO.getList("Index"), "ID", "Name");//supplier
             
             return View();
@@ -93,7 +93,7 @@ namespace ThucHanh.Areas.Admin.Controllers
                 return RedirectToAction("Index");
 
             }
-            ViewBag.ListCartID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
+            ViewBag.ListCatID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
             ViewBag.ListSupID = new SelectList(suppliersDAO.getList("Index"), "ID", "Name");//supplier
             return View(products);
         }
@@ -111,7 +111,7 @@ namespace ThucHanh.Areas.Admin.Controllers
                 TempData["message"] = new XMessage("danger", "Không tìm thấy sản phẩm");
                 return RedirectToAction("Index");
             }
-            ViewBag.ListCartID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
+            ViewBag.ListCatID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
             ViewBag.ListSupID = new SelectList(suppliersDAO.getList("Index"), "ID", "Name");//supplier
             return View(products);
         }
@@ -163,6 +163,8 @@ namespace ThucHanh.Areas.Admin.Controllers
                 TempData["message"] = new XMessage("success", "Cập nhật sản phẩm thành công");
                 return RedirectToAction("Index");
             }
+            ViewBag.ListCatID = new SelectList(categoriesDAO.getList("Index"), "ID", "Name");//category
+            ViewBag.ListSupID = new SelectList(suppliersDAO.getList("Index"), "ID", "Name");//supplier
             return View(products);
         }
 
