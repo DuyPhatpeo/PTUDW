@@ -62,7 +62,7 @@
                                     <td> @Html.DisplayFor(modelItem => item.SupplierID)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Price) </td>
                                     <td> @Html.DisplayFor(modelItem => item.Amount)</td>
-                                    <td> @Html.DisplayFor(modelItem => item.Image)</td>
+                                    <td><img src="~/Public/img/product/@item.Image" alt="Img" style="max-width : 100px" /></td>
                                     <td>
                                         @if (item.Status == 1)
                                         {
