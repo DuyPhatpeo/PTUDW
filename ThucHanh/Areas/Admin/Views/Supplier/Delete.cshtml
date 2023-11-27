@@ -55,12 +55,13 @@
                                     <td><img src="~/Public/img/supplier/@Model.Image" alt="Img" style="max-width: 100px;" /></td>
                                     <td>@Html.DisplayFor(model => model.CreateAt)</td>
                                     <td>@Html.DisplayFor(model => model.UpdateAt)</td>
+                                    <td>
+                                        <button class="btn-sm btn-danger" type="submit" name="Delete"> Xóa [Delete] <i class="fa fa-trash"></i> </button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="form-actions no-color">
-                            <button class="btn-sm btn-danger" type="submit" name="delete"> Xóa <i class="fa fa-trash"></i></button>
-                        </div>
+                        
                     </div> <!-- /.card-footer-->
                 </div><!-- /.card -->
             </section><!-- /.content -->
