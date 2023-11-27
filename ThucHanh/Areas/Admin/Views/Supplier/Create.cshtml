@@ -65,7 +65,7 @@
                                 <div class="form-group">
                                     <label>Logo NCC <span class="text-danger"></span></label>
                                     <div class="col-md-10">
-                                        <input type="file" name="img" class="form-control" alt="Hình ảnh" />
+                                        Chọn ảnh đại diện: <input type="file" name="img" alt="Hình ảnh" />
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,8 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-12" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem { Text = "Không xuất bản", Value = "2" }, new SelectListItem { Text = "Xuất bản", Value = "1" } }, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                             </div>
