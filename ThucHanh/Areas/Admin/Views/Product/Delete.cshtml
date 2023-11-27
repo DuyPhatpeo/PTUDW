@@ -34,9 +34,7 @@
                                     <th>@Html.DisplayNameFor(model => model.CatID)</th>
                                     <th>@Html.DisplayNameFor(model => model.Name)</th>
                                     <th>@Html.DisplayNameFor(model => model.Slug)</th>
-
                                     <th>@Html.DisplayNameFor(model => model.Price)</th>
-
                                     <th>@Html.DisplayNameFor(model => model.Amount)</th>
 
                                 </tr>
@@ -47,17 +45,15 @@
                                     <td>@Html.DisplayFor(model => model.CatID)</td>
                                     <td>@Html.DisplayFor(model => model.Name)</td>
                                     <td>@Html.DisplayFor(model => model.Slug)</td>
-
                                     <td>@Html.DisplayFor(model => model.Price)</td>
-
                                     <td>@Html.DisplayFor(model => model.Amount)</td>
+                                    <td>
+                                        <button class="btn-sm btn-danger" type="submit" name="Delete"> Xóa [Delete] <i class="fa fa-trash"></i> </button>
+                                    </td>
 
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="form-actions no-color">
-                            <button class="btn-sm btn-danger" type="submit" name="save">[Xóa]<i class="fa fa-save"></i></button>
-                        </div>
                     </div> <!-- /.card-footer-->
                 </div><!-- /.card -->
             </section><!-- /.content -->
