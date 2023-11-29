@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MyClass.Model.Menus>
+
+@{
+    var menu = ViewBag.Menu2cap;
+}
+<li class="nav-item submenu dropdown">
+    <a id="menu2cap" class="nav-link dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true"
+       aria-expanded="false" href="@menu.Link">@menu.Name</a>
+    <ul class="dropdown-menu">
+        @foreach (var item in Model)
+        {
+            <li class="nav-item"><a class="nav-link text-uppercase" href="@item.Link">@item.Name</a></li>
+        }
+    </ul>
+</li>

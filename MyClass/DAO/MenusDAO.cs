@@ -18,10 +18,12 @@ namespace MyClass.DAO
             return db.Menus.ToList();
         }
 
-        public List<Menus> getListByParentId(int parentid = 0)
+        //Hien thi danh sach thoa 2 dieu kien cho tran nguoi dung
+        public List<Menus> getListByParentId(int parentid, string position)
         {
             return db.Menus
-                .Where(m => m.ParentID == parentid && m.Status == 1)
+                .Where(m => m.ParentID == parentid && m.Status == 1 && m.Position == position)
+                .OrderBy(m => m.Order)
                 .ToList();
         }
 
