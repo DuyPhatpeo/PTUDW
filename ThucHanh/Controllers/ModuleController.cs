@@ -11,16 +11,15 @@ namespace ThucHanh.Controllers
 {
     public class ModuleController : Controller
     {
+        ////////////////////////////////////////////////////////////////////////////
         MenusDAO menusDAO = new MenusDAO();
-        // GET: Module
-        public ActionResult Index()
+
+        ///////////////////////////////////////////////////////////////////////////
+        // GET: Mainmenu
+        public ActionResult MainMenu()
         {
-            return View();
-        }
-        public ActionResult MainMenu() 
-        {
-            List<Menus> list = menusDAO.getListByParentId(0,"MainMenu");
-            return View("MainMenu",list);
+            List<Menus> list = menusDAO.getListByParentId(0, "MainMenu");
+            return View("MainMenu", list);
         }
         ///////////////////////////////////////////////////////////////////////////
         // GET: MainmenuSub
@@ -38,6 +37,30 @@ namespace ThucHanh.Controllers
                 ViewBag.Menu2cap = menus;
                 return View("MainMenuSub_1", list);
             }
+        }
+
+        //Get: Slider
+        public ActionResult Slider()
+        {
+            SlidersDAO slidersDAO = new SlidersDAO();
+            List<Sliders> list = slidersDAO.getListByPosition("slider");
+            //ten ham dat t uy y theo chuc nang
+            return View("Slider", list);
+        }
+
+        public ActionResult CategoriesList()
+        {
+            CategoriesDAO categoriesDAO = new CategoriesDAO();
+            List<Categories> list = categoriesDAO.getListByPareantId(0);
+            return View("CategoriesList", list);
+        }
+        ///////////////////////////////////////////////////////////////////////////
+        ///Footer Menu
+        public ActionResult MenuFooter()
+        {
+            MenusDAO menusDAO = new MenusDAO();
+            List<Menus> list = menusDAO.getListByParentId(0, "Footer");
+            return View("MenuFooter", list);
         }
     }
 }
