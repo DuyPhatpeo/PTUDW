@@ -44,15 +44,13 @@ namespace MyClass.Model
         public int CreateBy { get; set; }
 
         [Display(Name = "Ngày cập nhật")]
-        [Required(ErrorMessage = "Ngày cập nhật không để trống")]
-        public DateTime UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
 
         [Display(Name = "Người cập nhật")]
-        [Required(ErrorMessage = "Người cập nhật không để trống")]
-        public int UpdateBy { get; set; }
+        public int? UpdateBy { get; set; }
 
         [Display(Name = "Trạng thái")]
         [Required(ErrorMessage = "Trạng thái không để trống")]
-        public int Status { get; set; }
+        public int? Status { get; set; }
     }
 }
