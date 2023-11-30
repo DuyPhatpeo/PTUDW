@@ -40,15 +40,12 @@ namespace MyClass.DAO
             }
             return list;
         }
-
-        /////////////////////////////////////////////////////////////////////////////////////
-        //tra ve 1 mau tin co dieu kien Pos = position va status =1
         public List<Sliders> getListByPosition(string position)
         {
             return db.Sliders
-                .Where(m => m.Position == position && m.Status == 1)
-                .OrderBy(m => m.CreateAt)
-                .ToList();
+              .Where(m => m.Position == position && m.Status == 1)
+              .OrderBy(m => m.CreateAt)
+              .ToList();
         }
 
         /////////////////////////////////////////////////////////////////////////////////////
