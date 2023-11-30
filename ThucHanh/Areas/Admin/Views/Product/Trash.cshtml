@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyClass.Model.Products>
+﻿@model IEnumerable<MyClass.Model.ProductInfo>
 @{
     ViewBag.Title = "Thùng rác sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layoutadmin.cshtml";
@@ -32,7 +32,7 @@
                     <table class="table table-bordered table-striped" id="myTable">
                         <thead>
                             <tr>
-                                <th>@Html.DisplayNameFor(model => model.ID)</th>
+                                <th>@Html.DisplayNameFor(model => model.Id)</th>
                                 <th>@Html.DisplayNameFor(model => model.CatID)</th>
                                 <th>@Html.DisplayNameFor(model => model.Name)</th>
                                 <th>@Html.DisplayNameFor(model => model.Slug)</th>
@@ -50,7 +50,7 @@
                             {
 
                                 <tr>
-                                    <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
                                     <td>@Html.DisplayFor(modelItem => item.CatID)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Slug)</td>
@@ -60,8 +60,8 @@
                                     <td>@Html.DisplayFor(modelItem => item.Amount)</td>
                                     <td><img src="~/Public/img/product/@item.Image" alt="Img" style="max-width : 100px" /></td>
                                     <td>
-                                        <a href="@Url.Action("Undo","Product", new { id = item.ID })" class="btn-sm btn-success"><i class="fa fa-undo"></i></a>
-                                        <a href="@Url.Action("Delete","Product", new { id = item.ID })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a href="@Url.Action("Undo","Product", new { id = item.Id })" class="btn-sm btn-success"><i class="fa fa-undo"></i></a>
+                                        <a href="@Url.Action("Delete","Product", new { id = item.Id })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             }
