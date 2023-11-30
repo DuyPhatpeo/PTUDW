@@ -19,13 +19,14 @@ namespace MyClass.Model
         public string Name { get; set; }
         [Display(Name = "Liên kết")]
         public string URL { get; set; }
-        [Display(Name = "Hình")]
+        [Display(Name = "Hình ảnh")]
         public string Image { get; set; }
         [Display(Name = "Sắp xếp")]
         public int? Order { get; set; }
         [Required(ErrorMessage = "Vị trí không được để trống")]
         [Display(Name = "Vị trí")]
         public string Position { get; set; }
+
         [Required(ErrorMessage = "Mô tả không được để trống")]
         [Display(Name = "Mô tả")]
         public string MetaDesc { get; set; }
@@ -38,13 +39,12 @@ namespace MyClass.Model
         [Required(ErrorMessage = "Ngày tạo không được để trống")]
         [Display(Name = "Ngày tạo")]
         public DateTime CreateAt { get; set; }
-        [Display(Name = "Người cập nhật")]
+        [Display(Name = "Cập nhật bởi")]
         public int? UpdateBy { get; set; }
         [Display(Name = "Thời gian cập nhật")]
         public DateTime? UpdateAt { get; set; }
         [Required(ErrorMessage = "Trạng thái không được để trống")]
         [Display(Name = "Trạng thái")]
         public int Status { get; set; }
-
     }
 }
