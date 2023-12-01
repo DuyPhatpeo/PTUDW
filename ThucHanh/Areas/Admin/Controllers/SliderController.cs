@@ -321,7 +321,6 @@ namespace ThucHanh.Areas.Admin.Controllers
                 }
 
             }
-            slidersDAO.Delete(sliders);
             //Thong bao thanh cong
             TempData["message"] = new XMessage("success", "Xóa danh mục thành công");
             //O lai trang thung rac
