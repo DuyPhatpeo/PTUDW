@@ -137,11 +137,15 @@
     <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
     <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Libary\CartItem.cs" />
+    <Compile Include="Libary\XCart.cs" />
     <Compile Include="Libary\XMessage.cs" />
     <Compile Include="Libary\XString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2743,6 +2747,9 @@
     <Content Include="Views\Site\Product.cshtml" />
     <Content Include="Views\Site\ProductDetail.cshtml" />
     <Content Include="Views\Module\MenuFooter.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
+    <Content Include="Views\TimKiem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
