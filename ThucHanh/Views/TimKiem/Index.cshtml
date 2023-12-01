@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MyClass.Model.Products>
+﻿@model IEnumerable<MyClass.Model.ProductInfo>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutSite.cshtml";
@@ -19,7 +19,7 @@
                             <ul class="card-product__imgOverlay">
                                 <li><button><i class="ti-search"></i></button></li>
                                 <li>
-                                    <a href="@Url.Action("AddCart","Cart", new { productid = product.ID})">
+                                    <a href="@Url.Action("AddCart","GioHang", new { productid = product.Id})">
                                         <span class="custom-button">
                                             <i class="ti-shopping-cart"></i>
                                         </span>

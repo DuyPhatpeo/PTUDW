@@ -28,7 +28,19 @@
                         soluong = cartSession.Count;
                     }
                 }
-                <li class="nav-item"><button><i class="ti-search"></i></button></li>
+                <li class="nav-item">
+                    <div class="input-group mb-3 box-input">
+                        <form class="form" action="@Url.Action("Index","TimKiem")" method="post">
+                            <input type="text" placeholder="Search..." id="searchString" name="searchString" />
+                            <button>
+                                <a href="#">
+                                    <i class="ti-search"></i>
+                                </a>
+                            </button>
+
+                        </form>
+                    </div>
+                </li>
                 <li class="nav-item"><a href="~/gio-hang"><i class="ti-shopping-cart"></i><span class="nav-shop__circle text-info">@soluong</span></a> </li>
                 <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
             </ul>
