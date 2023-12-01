@@ -1,5 +1,40 @@
 ﻿@model IEnumerable<MyClass.Model.Menus>
 @using ThucHanh.Libary
+<style>
+    .box-input {
+        height: 30px;
+        display: flex;
+        cursor: pointer;
+        padding: 10px 20px;
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3,);
+    }
+
+        .box-input input {
+            width: 150px;
+            outline: none;
+            border: 0;
+            border-bottom: 2px solid #80bdff;
+            border-radius: 0;
+            background: transparent;
+            transition: 0.3s ease-in-out;
+        }
+
+            .box-input input:focus {
+                border-radius: 10px;
+                border-bottom: 0;
+            }
+
+        .box-input i {
+            transition: 0.2s ease-in-out;
+        }
+
+            .box-input i:hover {
+                color: #007bff;
+                font-size: 1.2rem;
+            }
+</style>
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand logo_h" href="#"><img src="~/Public/img/logo.svg" alt=""></a>

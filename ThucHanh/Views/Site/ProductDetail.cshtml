@@ -59,7 +59,9 @@
                                     </button>
                                 </div>
                             </div>
-                            <a class="button primary-btn mx-5" href="#">Thêm vào giỏ</a>
+                            <a href="@Url.Action("AddCart","GioHang", new { productid = product.Id})" class=button primary-btn mx-5">
+                                Thêm vào giỏ
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -170,3 +170,7 @@ D:\PTUDW\ThucHanh\obj\Debug\ThucHanh.csproj.CoreCompileInputs.cache
 D:\PTUDW\ThucHanh\obj\Debug\ThucHanh.csproj.CopyComplete
 D:\PTUDW\ThucHanh\obj\Debug\ThucHanh.dll
 D:\PTUDW\ThucHanh\obj\Debug\ThucHanh.pdb
+D:\Code\PTUDW\ThucHanh\bin\PagedList.dll
+D:\Code\PTUDW\ThucHanh\bin\PagedList.xml
+D:\Code\PTUDW\ThucHanh\bin\PagedList.Mvc.dll
+D:\Code\PTUDW\ThucHanh\bin\PagedList.Mvc.xml
