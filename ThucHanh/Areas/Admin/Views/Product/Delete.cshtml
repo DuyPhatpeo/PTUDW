@@ -36,6 +36,7 @@
                                     <th>@Html.DisplayNameFor(model => model.Slug)</th>
                                     <th>@Html.DisplayNameFor(model => model.Price)</th>
                                     <th>@Html.DisplayNameFor(model => model.Amount)</th>
+                                    <th> @Html.DisplayNameFor(model => model.Image)</th>
 
                                 </tr>
                             </thead>
@@ -47,6 +48,7 @@
                                     <td>@Html.DisplayFor(model => model.Slug)</td>
                                     <td>@Html.DisplayFor(model => model.Price)</td>
                                     <td>@Html.DisplayFor(model => model.Amount)</td>
+                                    <td><img src="~/Public/img/product/@Model.Image" alt="Img" style="max-width : 100px" /></td>
                                     <td>
                                         <button class="btn-sm btn-danger" type="submit" name="Delete"> Xóa [Delete] <i class="fa fa-trash"></i> </button>
                                     </td>
